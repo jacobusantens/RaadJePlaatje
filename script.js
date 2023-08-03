@@ -61,7 +61,7 @@ function on_canvas_touch_end(e) {
 function on_canvas_touch_move(e) {    
     canvas_read_touch(canvas, e);
     if (canvas.tc_md && (canvas.tc_x1 !== canvas.tc_x2 || canvas.tc_y1 !== canvas.tc_y2)) {
-        alert(`${canvas.tc_x1} ${canvas.tc_y1} ${canvas.tc_x2} ${canvas.tc_y2}`);
+        //alert(`${canvas.tc_x1} ${canvas.tc_y1} ${canvas.tc_x2} ${canvas.tc_y2}`);
         let ctx = canvas.getContext("2d");
 
         // Drawline !!!
