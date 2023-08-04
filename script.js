@@ -68,8 +68,14 @@ function canvas_read_touch(canvas, e) {
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
 
+    // This works
+    /*
     canvas.tc_x2 = e.clientX - canvasRect.left;
     canvas.tc_y2 = e.clientY - canvasRect.top;
+    */
+
+    canvas.tc_x2 = e.offsetX;
+    canvas.tc_y2 = e.offsetY;
 
     /*
     canvas.tc_x2 = touch.pageX - document.documentElement.scrollLeft - canvasRect.left;
