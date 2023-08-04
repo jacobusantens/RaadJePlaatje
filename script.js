@@ -65,10 +65,10 @@ function canvas_read_touch(canvas, e) {
 
     touch = e.touches[0];
 
-    /*
+    // Back up old coordinates.
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
-    */
+    
 
     // This works
     /*
