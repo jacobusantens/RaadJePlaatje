@@ -1,11 +1,24 @@
 let canvas = document.getElementById('thecanvas');
 
 function canvas_read_mouse(canvas, e) {
+
+    /*
     let canvasRect = canvas.getBoundingClientRect();
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
     canvas.tc_x2 = e.clientX - canvasRect.left;
     canvas.tc_y2 = e.clientY - canvasRect.top;
+    */
+
+    let canvasRect = canvas.getBoundingClientRect();
+    
+    canvas.tc_x1 = canvas.tc_x2;
+    canvas.tc_y1 = canvas.tc_y2;
+    canvas.tc_x2 = e.offsetX;
+    canvas.tc_y2 = e.offsetY;
+
+    // x = e.offsetX;
+    // y = e.offsetY;
 }
 
 function on_canvas_mouse_down(e) {
@@ -42,7 +55,16 @@ function canvas_read_touch(canvas, e) {
     let canvasRect = canvas.getBoundingClientRect();
 
     // Old Stuff
+
+    /*
     let touch = event.touches[0];
+
+    var x = e.touches[0].clientX;
+    var y = e.touches[0].clientY;
+    */
+
+    touch = e.touches[0];
+
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
     canvas.tc_x2 = touch.pageX - document.documentElement.scrollLeft - canvasRect.left;
