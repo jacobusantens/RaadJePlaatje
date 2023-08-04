@@ -54,6 +54,13 @@ function on_canvas_mouse_move(e) {
 function canvas_read_touch(canvas, e) {
     let canvasRect = canvas.getBoundingClientRect();
 
+    
+    let touch = event.touches[0];
+    canvas.tc_x1 = canvas.tc_x2;
+    canvas.tc_y1 = canvas.tc_y2;
+    canvas.tc_x2 = touch.pageX - document.documentElement.scrollLeft - canvasRect.left;
+    canvas.tc_y2 = touch.pageY - document.documentElement.scrollTop - canvasRect.top;
+
     // Old Stuff
 
     /*
@@ -63,13 +70,14 @@ function canvas_read_touch(canvas, e) {
     var y = e.touches[0].clientY;
     */
 
-    touch = e.touches[0];
+    // touch = e.touches[0];
 
     // Back up old coordinates.
+    /*
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
+    */
     
-
     // This works
     /*
     canvas.tc_x2 = e.clientX - canvasRect.left;
@@ -81,8 +89,8 @@ function canvas_read_touch(canvas, e) {
     canvas.tc_y2 = e.offsetY;
     */
     
-    canvas.tc_x2 = touch.pageX - document.documentElement.scrollLeft - canvasRect.left;
-    canvas.tc_y2 = touch.pageY - document.documentElement.scrollTop - canvasRect.top;
+    // canvas.tc_x2 = touch.pageX - document.documentElement.scrollLeft - canvasRect.left;
+    // canvas.tc_y2 = touch.pageY - document.documentElement.scrollTop - canvasRect.top;
 }
 
 function on_canvas_touch_start(e) {
