@@ -59,8 +59,8 @@ function canvas_read_touch(canvas, e) {
 
     // let touch = event.touches[0];
 
-    var x = e.touches[0].offsetX;
-    var y = e.touches[0].offsetY;
+    var x = e.touches[0].clientX;
+    var y = e.touches[0].clientY;
 
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
