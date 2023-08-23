@@ -65,6 +65,8 @@ function canvas_read_touch(canvas, e) {
     canvas.tc_x2 = e.clientX - canvasRect.left;
     canvas.tc_y2 = e.clientY - canvasRect.top;
 
+    // Extra comment.
+
 
     // Old Stuff
 
