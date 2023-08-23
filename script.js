@@ -55,14 +55,17 @@ function canvas_read_touch(canvas, e) {
     
     let canvasRect = canvas.getBoundingClientRect();
 
+    // let touch = event.touches[0];
 
-    // var x = e.touches[0].offsetX;
-    // var y = e.touches[0].offsetY;
+    // let touch = event.touches[0];
+
+    var x = e.touches[0].offsetX;
+    var y = e.touches[0].offsetY;
 
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
-    canvas.tc_x2 = e.touches[0].offsetX;
-    canvas.tc_y2 = e.touches[0].offsetY;
+    canvas.tc_x2 = x - canvasRect.left;
+    canvas.tc_y2 = y - canvasRect.top;
 
     /*
     
@@ -148,7 +151,7 @@ function on_canvas_touch_move(e) {
 
 function drawLine(context, x1, y1, x2, y2) {
   context.beginPath();
-  context.strokeStyle = 'green';
+  context.strokeStyle = 'blue';
   context.lineWidth = 13;
   context.lineJoin = "round";
   context.moveTo(x1, y1);
