@@ -52,18 +52,31 @@ function on_canvas_mouse_move(e) {
 }
 
 function canvas_read_touch(canvas, e) {
+    
     let canvasRect = canvas.getBoundingClientRect();
 
+    let touch = event.touches[0];
+    
+    canvas.tc_x1 = canvas.tc_x2;
+    canvas.tc_y1 = canvas.tc_y2;
+    canvas.tc_x2 = touch.pageX - document.documentElement.scrollLeft - canvasRect.left;
+    canvas.tc_y2 = touch.pageY - document.documentElement.scrollTop - canvasRect.top;
+
+    /*
     
     touch = e.touches[0];
 
     canvas.tc_x1 = canvas.tc_x2;
     canvas.tc_y1 = canvas.tc_y2;
+    */
 
     // canvas.tc_x2 = touch.pageX - document.documentElement.scrollLeft - canvasRect.left;
     // canvas.tc_y2 = touch.pageY - document.documentElement.scrollTop - canvasRect.top;
+
+    /*
     canvas.tc_x2 = e.clientX - canvasRect.left;
     canvas.tc_y2 = e.clientY - canvasRect.top;
+    */
 
     // Extra comment.
 
